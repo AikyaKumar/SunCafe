@@ -1,0 +1,11 @@
+import React from 'react'
+import CafeMap from './components/CafeMap'
+
+export default function App() {
+  return (
+    <div>
+      <h1 style={{ textAlign: 'center' }}>☀️ Heidelberg Cafés Sunlight Map</h1>
+      <CafeMap />
+    </div>
+  )
+}
