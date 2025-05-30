@@ -1,0 +1,33 @@
+# stop all docker container running
+docker stop $(docker ps -aq)
+ 
+# find culprit on port 2181
+sudo lsof -i :2181
+sudo kill -9 65635
+
+# Optional: Clear all Kafka/Zookeeper containers and volumes
+docker-compose down -v
+
+# 1. Start Kafka + Zookeeper
+cd kafka/
+docker-compose up -d
+ 
+# 2. Train model
+cd ../ml-model/
+python train_model.py
+
+# 3. In another terminal, start producer
+cd kafka
+python producer.py
+
+# 4. Start consumer for predictions
+python sunlight_prediction.py
+ 
+# 5. Launch dashboard
+cd dashboard
+streamlit run app.py
+ 
+# install kafka
+brew list kafka
+brew install kafka
+docker-compose down
