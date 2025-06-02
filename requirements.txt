@@ -1,0 +1,28 @@
+# Core packages
+pandas
+numpy
+scikit-learn
+
+# Kafka client
+kafka-python
+
+# Streamlit for dashboard
+streamlit
+
+# Map rendering
+folium
+streamlit-folium
+
+# For API calls
+requests
+
+# Optional (if you're doing geospatial manipulation or future map enhancements)
+geopy
+
+# Version pinning (optional but recommended for reproducibility)
+# pandas==2.2.2
+# scikit-learn==1.4.2
+# kafka-python==2.0.2
+# streamlit==1.34.0
+# folium==0.16.0
+# streamlit-folium==0.17.0

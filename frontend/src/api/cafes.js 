@@ -1,5 +1,0 @@
-export async function fetchSunlight() {
-  const res = await fetch("http://localhost:8000/sunlight");
-  const data = await res.json();
-  return data;
-}
